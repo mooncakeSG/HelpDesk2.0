@@ -1,0 +1,30 @@
+# IT Helpdesk Email Notification System - Environment Configuration
+# Copy this file to .env and update with your actual email settings
+
+# Gmail SMTP Configuration
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+
+# Your Gmail credentials (use App Password for security)
+MAIL_USERNAME=your.email@gmail.com
+MAIL_PASSWORD=yourapppassword
+
+# Email sender configuration
+MAIL_DEFAULT_SENDER=IT Helpdesk <your.email@gmail.com>
+
+# Team notification emails (comma-separated list)
+NOTIFY_EMAILS=teammate1@gmail.com,teammate2@gmail.com,teammate3@gmail.com,teammate4@gmail.com,teammate5@gmail.com
+
+# Instructions for Gmail App Password:
+# 1. Enable 2-Factor Authentication on your Google account
+# 2. Go to Google Account settings > Security > App passwords
+# 3. Generate a new app password for "Mail"
+# 4. Use this 16-character password (not your regular Gmail password)
+# 5. Replace "yourapppassword" above with your actual app password
+
+# Example configuration:
+# MAIL_USERNAME=john.doe@company.com
+# MAIL_PASSWORD=abcd efgh ijkl mnop
+# MAIL_DEFAULT_SENDER=IT Helpdesk <john.doe@company.com>
+# NOTIFY_EMAILS=sarah@company.com,mike@company.com,emily@company.com,david@company.com,lisa@company.com

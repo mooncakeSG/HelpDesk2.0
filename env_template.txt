@@ -1,0 +1,10 @@
+# Flask Configuration
+FLASK_APP=app.py
+FLASK_ENV=development
+FLASK_DEBUG=1
+SECRET_KEY=your_secret_key_here
+
+# SQLiteCloud Configuration
+SQLITECLOUD_API_KEY=FpQNNvLCTlRGFvVlOnBuQbqNel3b0wPDs9u6jO2HsWU
+SQLITECLOUD_URL=sqlitecloud.io/organizations/inytlrynz/projects/crihbwjchz/studio?database=my-database
+

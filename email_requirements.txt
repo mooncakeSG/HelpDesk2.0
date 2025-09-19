@@ -1,0 +1,4 @@
+# IT Helpdesk Email Notification System Dependencies
+Flask==2.3.3
+Flask-Mail==0.9.1
+python-dotenv==1.0.0

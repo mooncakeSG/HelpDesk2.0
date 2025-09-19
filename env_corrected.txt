@@ -1,0 +1,18 @@
+# Flask Configuration
+FLASK_APP=app.py
+FLASK_ENV=development
+FLASK_DEBUG=1
+SECRET_KEY=your_secret_key_here
+
+# SQLiteCloud Configuration
+# Your API Key (keep this secure)
+SQLITECLOUD_API_KEY=FpQNNvLCTlRGFvVlOnBuQbqNel3b0wPDs9u6jO2HsWU
+
+# Based on your SQLiteCloud dashboard, the correct API URL is:
+SQLITECLOUD_URL=https://crihbwjchz.g5.sqlite.cloud:443/v2/weblite/sql
+
+# Instructions to get the correct URL:
+# 1. Go to your SQLiteCloud dashboard
+# 2. Navigate to your database
+# 3. Look for the API endpoint or database ID
+# 4. The correct format should be: https://api.sqlitecloud.io/v1/db/[DATABASE_ID]/query

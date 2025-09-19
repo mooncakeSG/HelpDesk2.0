@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Portal - IT Helpdesk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="agent">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Agent Portal</h1>
+            <p>Manage and resolve support tickets</p>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-error">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        {% if request.args.get('error') == 'update_failed' %}
+        <div class="alert alert-error">
+            Failed to update ticket. Please try again.
+        </div>
+        {% endif %}
+
+        <div class="export-actions">
+            <a href="{{ url_for('export_csv') }}" class="btn btn-success">
+                📊 Export CSV
+            </a>
+            <a href="{{ url_for('export_pdf') }}" class="btn btn-warning">
+                📄 Export PDF
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                🏠 Back to Home
+            </a>
+        </div>
+
+        {% if tickets %}
+        <div class="card">
+            <h2>Support Tickets ({{ tickets|length }} total)</h2>
+            <div class="tickets-grid">
+                {% for ticket in tickets %}
+                <div class="ticket-card">
+                    <!-- Ticket Header -->
+                    <div class="ticket-header">
+                        <div class="ticket-id">#{{ ticket[0] }}</div>
+                        <div class="ticket-meta">
+                            <div class="ticket-date">{{ ticket[1] }}</div>
+                            <div class="ticket-badges">
+                                <span class="priority-badge priority-{{ ticket[7].lower() }}">{{ ticket[7] }}</span>
+                                <span class="ticket-status status-{{ ticket[6].lower().replace(' ', '-') }}">{{ ticket[6] }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Body -->
+                    <div class="ticket-body">
+                        <div class="ticket-user">
+                            <div class="user-name">{{ ticket[2] }}</div>
+                            <div class="user-email">{{ ticket[3] }}</div>
+                        </div>
+                        <div class="ticket-issue">
+                            <strong>Issue:</strong>
+                            <p>{{ ticket[4] }}</p>
+                        </div>
+                        <div class="ticket-assignment">
+                            <strong>Assigned to:</strong> 
+                            <span class="assigned-agent">{{ ticket[8] if ticket[8] else 'Unassigned' }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Actions -->
+                    <div class="ticket-actions">
+                        <form method="POST" action="{{ url_for('update_ticket', ticket_id=ticket[0]) }}">
+                            <div class="form-group">
+                                <label for="notes_{{ ticket[0] }}">Notes</label>
+                                <textarea id="notes_{{ ticket[0] }}" name="notes" class="form-control ticket-notes" 
+                                          placeholder="Add notes...">{{ ticket[5] if ticket[5] else '' }}</textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="status_{{ ticket[0] }}">Status</label>
+                                    <select id="status_{{ ticket[0] }}" name="status" class="form-control">
+                                        <option value="Open" {% if ticket[6] == 'Open' %}selected{% endif %}>Open</option>
+                                        <option value="In Progress" {% if ticket[6] == 'In Progress' %}selected{% endif %}>In Progress</option>
+                                        <option value="Resolved" {% if ticket[6] == 'Resolved' %}selected{% endif %}>Resolved</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="priority_{{ ticket[0] }}">Priority</label>
+                                    <select id="priority_{{ ticket[0] }}" name="priority" class="form-control">
+                                        <option value="Low" {% if ticket[7] == 'Low' %}selected{% endif %}>Low</option>
+                                        <option value="Medium" {% if ticket[7] == 'Medium' %}selected{% endif %}>Medium</option>
+                                        <option value="High" {% if ticket[7] == 'High' %}selected{% endif %}>High</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assigned_agent_{{ ticket[0] }}">Assigned Agent</label>
+                                <input type="text" id="assigned_agent_{{ ticket[0] }}" name="assigned_agent" class="form-control" 
+                                       placeholder="Enter agent name" value="{{ ticket[8] if ticket[8] else '' }}">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-update">Update Ticket</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="card">
+            <div class="text-center">
+                <h2>No Tickets Found</h2>
+                <p>There are currently no support tickets in the system.</p>
+                <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card">
+            <h3>Quick Actions</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="text-align: center; padding: 1rem; background-color: #F0F9FF; border-radius: 8px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📊 Statistics</h4>
+                    <p><strong>Total Tickets:</strong> {{ tickets|length }}</p>
+                    <p><strong>Open:</strong> {{ tickets|selectattr('6', 'equalto', 'Open')|list|length }}</p>
+                    <p><strong>In Progress:</strong> {{ tickets|selectattr('6', 'equalto', 'In Progress')|list|length }}</p>
+                    <p><strong>Resolved:</strong> {{ tickets|selectattr('6', 'equalto', 'Resolved')|list|length }}</p>
+                </div>
+                
+                <div style="text-align: center; padding: 1rem; background-color: #F0FDF4; border-radius: 8px;">
+                    <h4 style="color: var(--success-color); margin-bottom: 0.5rem;">🎯 Best Practices</h4>
+                    <ul style="text-align: left; font-size: 0.9rem; line-height: 1.6;">
+                        <li>Respond within 2 hours</li>
+                        <li>Add detailed notes</li>
+                        <li>Update status regularly</li>
+                        <li>Follow up on resolved tickets</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; padding: 1rem; background-color: #FEF3C7; border-radius: 8px;">
+                    <h4 style="color: var(--warning-color); margin-bottom: 0.5rem;">📋 Common Issues</h4>
+                    <ul style="text-align: left; font-size: 0.9rem; line-height: 1.6;">
+                        <li>Password resets</li>
+                        <li>Software installation</li>
+                        <li>Network connectivity</li>
+                        <li>Email configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-refresh functionality + table row fade-in
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-refresh every 30 seconds
+            setInterval(function() {
+                location.reload();
+            }, 30000);
+            
+            // Add confirmation for status changes
+            const statusSelects = document.querySelectorAll('select[name="status"]');
+            statusSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    if (this.value === 'Resolved') {
+                        if (!confirm('Are you sure you want to mark this ticket as resolved?')) {
+                            this.value = 'In Progress';
+                        }
+                    }
+                });
+            });
+            
+            // Add form submission feedback
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function() {
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.textContent = 'Updating...';
+                    submitBtn.disabled = true;
+                });
+            });
+
+            // Row fade-in animation
+            const rows = document.querySelectorAll('table tbody tr');
+            rows.forEach((row, i) => {
+                row.style.opacity = 0;
+                row.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    row.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    row.style.opacity = 1;
+                    row.style.transform = 'translateY(0)';
+                }, i * 100);
+            });
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+R to refresh
+            if (e.ctrlKey && e.key === 'r') {
+                e.preventDefault();
+                location.reload();
+            }
+            
+            // Ctrl+E to export CSV
+            if (e.ctrlKey && e.key === 'e') {
+                e.preventDefault();
+                window.location.href = "{{ url_for('export_csv') }}";
+            }
+        });
+    </script>
+</body>
+</html>

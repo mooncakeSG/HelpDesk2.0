@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Helpdesk - Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="index">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="header">
+            <h1>IT Helpdesk System</h1>
+            <p>Streamlined support for your technical needs</p>
+        </div>
+
+        <div class="card">
+            <h2 class="text-center mb-4">Welcome to the IT Helpdesk</h2>
+            <p class="text-center mb-4">
+                Our helpdesk system is designed to provide efficient technical support for all your IT needs. 
+                Whether you're experiencing technical issues or need assistance with your devices, we're here to help.
+            </p>
+            
+            <div class="role-selection">
+                <a href="{{ url_for('ticket_form') }}" class="role-card">
+                    <h3>👤 Submit a Ticket</h3>
+                    <p>Are you experiencing a technical issue? Submit a support ticket and our team will help you resolve it quickly.</p>
+                    <div class="btn">Submit New Ticket</div>
+                </a>
+                
+                <a href="{{ url_for('agent_page') }}" class="role-card">
+                    <h3>🛠️ Agent Portal</h3>
+                    <p>Are you an IT support agent? Access the agent portal to view, manage, and resolve support tickets.</p>
+                    <div class="btn btn-secondary">Access Agent Portal</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>How It Works</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 1rem;">
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">1. Submit Your Issue</h4>
+                    <p>Describe your technical problem in detail. The more information you provide, the faster we can help you.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">2. Get Assigned</h4>
+                    <p>Our support team will review your ticket and assign it to the most qualified agent for your issue.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">3. Receive Support</h4>
+                    <p>Our agents will work on your issue, provide updates, and guide you through the resolution process.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Support Information</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div>
+                    <strong>Response Time:</strong><br>
+                    <span style="color: var(--success-color);">Within 2 hours</span>
+                </div>
+                <div>
+                    <strong>Business Hours:</strong><br>
+                    <span>Monday - Friday, 8 AM - 6 PM</span>
+                </div>
+                <div>
+                    <strong>Emergency Support:</strong><br>
+                    <span style="color: var(--danger-color);">24/7 Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
