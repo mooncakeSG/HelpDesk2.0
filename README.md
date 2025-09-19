@@ -1,6 +1,6 @@
-# IT Helpdesk Simulation
+# 🎫 IT Helpdesk 2.0 - Complete Solution
 
-A simple IT helpdesk simulation project with Flask backend and SQLite storage. Users submit tickets, agents troubleshoot, add notes, mark resolved, and export PDF/CSV. Designed for a team of five to share tickets.
+A modern, full-featured IT Helpdesk system built with Flask, SQLiteCloud, and email notifications. Perfect for small to medium teams with enterprise-grade features.
 
 ## Features
 
