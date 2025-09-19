@@ -86,7 +86,7 @@ def send_ticket_notification(name, email, issue, priority):
         }
         
         # Send to email notification service
-        email_service_url = "http://localhost:5001/submit_ticket"
+        email_service_url = "https://it-helpdesk-email.onrender.com/submit_ticket"
         
         response = requests.post(
             email_service_url,
