@@ -131,7 +131,7 @@ def ticket_form():
         insert_query = f'''
             USE DATABASE 'my-database';
             INSERT INTO tickets (timestamp, name, email, issue, notes, status, priority, assigned_agent, category)
-            VALUES ('{timestamp}', '{name_escaped}', '{email_escaped}', '{issue_escaped}', '', 'Open', '{priority_escaped}', '', 'General')
+            VALUES ('{timestamp}', '{name_escaped}', '{email_escaped}', '{issue_escaped}', '', 'Open', '{priority_escaped}', '', 'Week 2: Software & Hardware Support')
         '''
         
         result = execute_query(insert_query)

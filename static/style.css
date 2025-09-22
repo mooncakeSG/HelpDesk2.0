@@ -794,6 +794,16 @@ table td:nth-child(8) {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 
+/* Week 2 Special Styling */
+.category-section:has(.category-title:contains("Week 2")) {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+.category-section:has(.category-title:contains("Week 2")) .category-header {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
 /* Collapsible Category Sections */
 .category-header {
     cursor: pointer;
@@ -806,6 +816,10 @@ table td:nth-child(8) {
 
 .category-section:has(.category-title:contains("Week 1")) .category-header:hover {
     background: linear-gradient(135deg, #059669, #047857);
+}
+
+.category-section:has(.category-title:contains("Week 2")) .category-header:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
 .category-toggle {
