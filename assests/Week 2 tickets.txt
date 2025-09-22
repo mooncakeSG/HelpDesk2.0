@@ -1,0 +1,12 @@
+1.User reports their laptop takes 15 minutes to boot and frequently freezes when multiple applications are open.
+2.User experiences a BSOD while connecting an external monitor through HDMI.
+3.Ethernet-connected desktop shows “Unidentified Network” and no internet access.
+4.Manager insists IT must provide a replacement laptop within hours after a burglary incident.
+5.Employee reports fan is always loud and system becomes slow after 30 minutes.
+6.User plugs in a USB device and laptop crashes instantly with BSOD.
+7.Employee reports Wi-Fi connects but no internet access is available.
+8.Remote worker calls upset because their laptop was stolen from a coffee shop, worried about personal and company files.
+9.User complains the laptop becomes unresponsive whenever multiple browser tabs are open.
+10.BSOD happens after Windows updates install and the system reboots.
+11.User reports network works fine on their phone but their laptop shows “No Internet” despite being connected.
+12.Executive calls furious because their laptop was stolen during a business trip and insists all data must be wiped remotely immediately.
