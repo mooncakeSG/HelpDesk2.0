@@ -733,3 +733,91 @@ table td:nth-child(8) {
         min-width: auto;
     }
 }
+
+/* Category Section Styles */
+.category-section {
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    overflow: hidden;
+}
+
+.category-header {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.category-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.category-section .tickets-grid {
+    padding: 1.5rem;
+    background: white;
+    margin: 0;
+}
+
+.category-section .ticket-card {
+    border: 1px solid #e5e7eb;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category-section .ticket-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Week 1 Special Styling */
+.category-section:has(.category-title:contains("Week 1")) {
+    border-color: #10b981;
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+}
+
+.category-section:has(.category-title:contains("Week 1")) .category-header {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Collapsible Category Sections */
+.category-header {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.category-header:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.category-section:has(.category-title:contains("Week 1")) .category-header:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.category-toggle {
+    margin-left: auto;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.category-section.collapsed .category-toggle {
+    transform: rotate(-90deg);
+}
+
+.category-section.collapsed .tickets-grid {
+    display: none;
+}

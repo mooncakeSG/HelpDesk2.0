@@ -1,0 +1,17 @@
+# Render Environment Variables Template
+# Copy these to your Render dashboard environment variables
+
+# Main Application Environment Variables
+SQLITECLOUD_API_KEY=your_sqlitecloud_api_key_here
+SQLITECLOUD_URL=https://your-database.g5.sqlite.cloud:443/v2/weblite/sql
+FLASK_ENV=production
+FLASK_DEBUG=False
+
+# Email Service Environment Variables
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME=your.email@gmail.com
+MAIL_PASSWORD=your_16_character_app_password
+MAIL_DEFAULT_SENDER=IT Helpdesk <your.email@gmail.com>
+NOTIFY_EMAILS=teammate1@gmail.com,teammate2@gmail.com,teammate3@gmail.com

@@ -41,9 +41,32 @@
         {% if tickets %}
         <div class="card">
             <h2>Support Tickets ({{ tickets|length }} total)</h2>
-            <div class="tickets-grid">
-                {% for ticket in tickets %}
-                <div class="ticket-card">
+            
+            <!-- Group tickets by category -->
+            {% set categories = {} %}
+            {% for ticket in tickets %}
+                {% set category = ticket[9] if ticket|length > 9 else 'General' %}
+                {% if category not in categories %}
+                    {% set _ = categories.update({category: []}) %}
+                {% endif %}
+                {% set _ = categories[category].append(ticket) %}
+            {% endfor %}
+            
+            {% for category, category_tickets in categories.items() %}
+            <div class="category-section">
+                <div class="category-header">
+                    <h3 class="category-title">
+                        {% if category == 'Week 1: Account and Communications Support' %}
+                            📁 Week 1: Account and Communications Support
+                        {% else %}
+                            📁 {{ category }}
+                        {% endif %}
+                        <span class="ticket-count">({{ category_tickets|length }} tickets)</span>
+                    </h3>
+                </div>
+                <div class="tickets-grid">
+                    {% for ticket in category_tickets %}
+                    <div class="ticket-card">
                     <!-- Ticket Header -->
                     <div class="ticket-header">
                         <div class="ticket-id">#{{ ticket[0] }}</div>
@@ -112,7 +135,9 @@
                     </div>
                 </div>
                 {% endfor %}
+                </div>
             </div>
+            {% endfor %}
         </div>
         {% else %}
         <div class="card">

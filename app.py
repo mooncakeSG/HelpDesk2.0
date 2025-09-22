@@ -130,8 +130,8 @@ def ticket_form():
         # Store in SQLiteCloud database
         insert_query = f'''
             USE DATABASE 'my-database';
-            INSERT INTO tickets (timestamp, name, email, issue, notes, status, priority, assigned_agent)
-            VALUES ('{timestamp}', '{name_escaped}', '{email_escaped}', '{issue_escaped}', '', 'Open', '{priority_escaped}', '')
+            INSERT INTO tickets (timestamp, name, email, issue, notes, status, priority, assigned_agent, category)
+            VALUES ('{timestamp}', '{name_escaped}', '{email_escaped}', '{issue_escaped}', '', 'Open', '{priority_escaped}', '', 'General')
         '''
         
         result = execute_query(insert_query)
@@ -163,7 +163,7 @@ def agent_page():
     tickets = []
     
     for ticket in raw_tickets:
-        # Convert dictionary to tuple format: (id, timestamp, name, email, issue, notes, status, priority, assigned_agent)
+        # Convert dictionary to tuple format: (id, timestamp, name, email, issue, notes, status, priority, assigned_agent, category)
         ticket_tuple = (
             ticket.get('id', ''),
             ticket.get('timestamp', ''),
@@ -173,7 +173,8 @@ def agent_page():
             ticket.get('notes', ''),
             ticket.get('status', 'Open'),
             ticket.get('priority', 'Medium'),
-            ticket.get('assigned_agent', '')
+            ticket.get('assigned_agent', ''),
+            ticket.get('category', 'General')
         )
         tickets.append(ticket_tuple)
     

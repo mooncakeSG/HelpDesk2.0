@@ -1,0 +1,21 @@
+services:
+- buildCommand: pip install -r requirements.txt
+  env: python
+  envVars:
+  - key: FLASK_ENV
+    value: production
+  - key: FLASK_DEBUG
+    value: 'False'
+  name: it-helpdesk-main
+  startCommand: python app.py
+  type: web
+- buildCommand: pip install -r email_requirements.txt
+  env: python
+  envVars:
+  - key: FLASK_ENV
+    value: production
+  - key: FLASK_DEBUG
+    value: 'False'
+  name: it-helpdesk-email
+  startCommand: python email_notifications.py
+  type: web
