@@ -1,0 +1,165 @@
+9/30/25, 10:18 AM #24 - Laptop very slow - Spiceworks Help Desk
+Ticket No: 24
+Summary Laptop very slow
+Description
+laptop has been really slow lately. It takes a long time to start up, and even simple tasks like opening Word or Excel freeze for a while.
+Ticket Attributes
+Status
+Closed
+Priority
+Medium
+Category
+Network
+Assignee
+Asenathi Bokwana
+Creator
+nitohi4715@etenx.com
+Created At
+15m ago
+Updated At
+3sago
+Due At
+Sep 03, 2025 12:00 AM
+Organization
+Tech Titanians
+Time Spent
+30m
+Age
+2
+Ticket Activity
+nitohi4715@etenx.com 15m ago
+created the ticket.
+Asenathi Bokwana 11m ago
+changed summary from VPN keeps disconnecting — Laptop very slow.
+Asenathi Bokwana 11m ago
+changed description from User trying to work remotely, but the VPN keeps disconnecting every 10-15 minutes and is affecting their work. — laptop has been really
+slow lately. It takes a long time to start up, and even simple tasks like opening Word or Excel freeze for a while.
+https://on.spiceworks.com/tickets/open/1?sort=updated_at-descaticket_number=24 113
+9/30/25, 10:18 AM #24 - Laptop very slow - Spiceworks Help Desk
+Asenathi Bokwana 11m ago
+setassignee to Asenathi Bokwana
+Asenathi Bokwana 11m ago
+set due date to Sep 03, 2025.
+Asenathi Bokwana 11m ago
+worked on this ticket for 30 minutes.
+Asenathi Bokwana 11m ago
+set category to Network.
+Asenathi Bokwana 3s ago
+Subject: Follow-Up on Laptop Performance Issue
+Hello User,
+Thank you for reporting this. To help diagnose the slowness, could you let me know.
+Approximately how long has this been happening?
+Do you notice slowness only during startup, o while using applications as well?
+Have you recently installed any new software?
+In the meantime, please restart your device and let me know if any error messages appear.
+Best regards,
+Asenathi IT Help Desk
+Asenathi Bokwana 3s ago
+Subject: Performance Optimization Steps
+Hello User,
+Thank you for confirming. I've performed the following steps remotely to optimize your laptop:
+Disabled unnecessary startup programs,
+Ran disk cleanup to remove temporary and cached files.
+Updated your system and security patches.
+Checked for background processes using high resources.
+Please restart your laptop and let me know if performance improves,
+Best regards, Asenathi IT Help Desk
+https://on.spiceworks.com/tickets/open/1?sort=updated_at-descaticket_number=24 213
+9/30/25, 10:18 AM #24 - Laptop very slow - Spiceworks Help Desk
+Asenathi Bokwana 35 ago
+Subject: Ticket Closed - Laptop Performance
+Hello User,
+I'm glad to hear your laptop is running faster now. I'll close this ticket. Please reach out if you notice performance issues again in the future.
+Best regards,
+Asenathi IT Help Desk
+Asenathi Bokwana 3s ago
+changed status from Open — Closed. 
+
+
+9/30/25, 11:42 AM
+Ticket No: 16
+Summary computer is slow
+Description
+Hi, my computer has been running really slow lately. It takes a long time to boot up, and even after logging in, apps like Outlook and Chrome take forever to open.
+#16 - computer is slow - Spiceworks Help Desk
+Sometimes the system freezes for a few seconds when switching between programs. I've noticed this happening more over the past week, especially in the mornings. | haven't installed anything new recently, and I've already tried restarting a few times. Can someone please check what's going on?
+Ticket Attributes
+Status
+Closed
+Priority
+Medium
+Category
+Network
+Assignee
+Asenathi Bokwana
+Creator
+Phumza Sotyantya
+Created At
+1dago
+Updated At
+21sago
+Due At
+1dago
+Organization
+Tech Titanians
+Time Spent
+30m
+Age
+23
+Ticket Activity
+Phumza Sotyantya 1d ago
+created the ticket.
+nitohi4715@etenx.com 2h ago
+laptop has been really slow lately. It takes a long time to start up, and even simple tasks like opening Word or Excel freeze for a while.
+Asenathi Bokwana 2h ago
+worked on this ticket for 30 minutes.
+https://on.spiceworks.com/tickets/closed/1 ?sort=assignee-ascaticket_number=16 13
+9/30/25, 11:42 AM #16 - computer is slow - Spiceworks Help Desk
+Asenathi Bokwana 2h ago
+Subject: Follow-Up on Laptop Performance Issue
+Hello User,
+Thank you for reporting this. To help diagnose the slowness, could you let me know.
+Approximately how long has this been happening?
+Do you notice slowness only during startup, o while using applications as well?
+Have you recently installed any new software?
+In the meantime, please restart your device and let me know if any error messages appear.
+Best regards, Asenathi
+IT Help Desk
+nitohid715@etenx.com 1hago
+Hi Asenathi,
+This has been going on for about two weeks. It's slow both at startup and when opening applications. | haven't installed anything new recently. No error messages appear.
+Thanks.
+Asenathi Bokwana 1h ago
+Subject: Performance Optimization Steps
+Hello User,
+Thank you for confirming. I've performed the following steps remotely to optimize your laptop:
+Disabled unnecessary startup programs.
+Ran disk cleanup to remove temporary and cached files.
+Updated your system and security patches.
+Checked for background processes using high resources.
+Please restart your laptop and let me know if performance improves,
+Best regards, Asenathi IT Help Desk
+nitohi4715@etenx.com 1hago
+Hi Asenathi,
+The laptop is much faster now. It starts up quickly, and apps open without freezing. Thanks for your help! You can close the ticket.
+Best regards.
+https://on.spiceworks.com/tickets/closed/1 ?sort=assignee-ascaticket_number=16 213
+9/30/25, 11:42 AM #16 - computer is slow - Spiceworks Help Desk
+Asenathi Bokwana 1h ago
+Subject: Ticket Closed ~ Laptop Performance
+Hello User,
+I'm glad to hear your laptop is running faster now. I'll close this ticket. Please reach out if you notice performance issues again in the future.
+Best regards,
+Asenathi IT Help Desk
+Asenathi Bokwana 4m ago
+set assignee to Asenathi Bokwana
+Asenathi Bokwana 1m ago
+merged #24 into this ticket.
+Asenathi Bokwana 575 ago
+changed status from Open — Closed.
+Asenathi Bokwana 375 ago
+changed due date from Sep 03, 2025 — Sep 29, 2025.
+Asenathi Bokwana 23s ago
+changed status from Closed — Open.
+Asenathi Bokwana ~ 21s ago
+changed status from Open — Closed. 
